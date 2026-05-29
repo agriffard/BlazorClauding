@@ -42,6 +42,16 @@
 </div>
 
 <div class="demo">
+    <h2>Custom word list</h2>
+    <p>Pass your own <code>Words</code> and <code>Cycle</code> through just those.</p>
+    <div class="demo-stage"><ClaudingSpinner Cycle="true" Words="@customWords" /></div>
+    <pre><code>private static readonly string[] words =
+    ["Compiling", "Deploying", "Shipping", "Caffeinating"];
+
+&lt;ClaudingSpinner Cycle="true" Words="@("@")words" /&gt;</code></pre>
+</div>
+
+<div class="demo">
     <h2>Custom frames &amp; styling</h2>
     <p>Swap the glyph frames and recolor via CSS variables.</p>
     <div class="demo-stage">
@@ -60,6 +70,7 @@
     private int randomKey;
 
     private static readonly string[] dotsFrames = ["⢎⡰", "⢎⡡", "⢎⡑", "⢎⠱", "⠎⡱", "⢊⡱", "⢌⡱", "⢆⡱"];
+    private static readonly string[] customWords = ["Compiling", "Deploying", "Shipping", "Caffeinating"];
 
     private async Task Reroll()
     {

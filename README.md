@@ -1,5 +1,9 @@
 # BlazorClauding
 
+[![NuGet](https://img.shields.io/nuget/v/BlazorClauding.svg)](https://www.nuget.org/packages/BlazorClauding/)
+[![NuGet downloads](https://img.shields.io/nuget/dt/BlazorClauding.svg)](https://www.nuget.org/packages/BlazorClauding/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 A whimsical **Claude-Code-style loading spinner** for Blazor. It pairs an animated
 glyph with a playful present-participle word — `Clauding`, `Reticulating`,
 `Pondering`, `Caramelizing` — that can be **fixed**, **random**, or **cycling**

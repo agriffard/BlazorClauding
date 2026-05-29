@@ -12,10 +12,14 @@
     <PackageId>BlazorClauding</PackageId>
     <Version>1.0.0</Version>
     <Authors>agriffard</Authors>
+    <Company>agriffard</Company>
+    <Copyright>Copyright © agriffard</Copyright>
     <Description>A whimsical Claude-Code-style Blazor loading spinner that pairs an animated glyph with a playful present-participle word (Clauding, Reticulating, Pondering…). Supports fixed, random, and cycling words.</Description>
     <PackageTags>blazor;spinner;loading;component;claude;razor;ui</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageReleaseNotes>Initial release: ClaudingSpinner component with fixed, random, and cycling words; customizable frames and CSS-variable theming.</PackageReleaseNotes>
     <RepositoryUrl>https://github.com/agriffard/BlazorClauding</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageProjectUrl>https://github.com/agriffard/BlazorClauding</PackageProjectUrl>
@@ -34,6 +38,7 @@
 
   <ItemGroup>
     <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+    <None Include="icon.png" Pack="true" PackagePath="\" />
   </ItemGroup>
 
 </Project>
