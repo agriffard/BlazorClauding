@@ -1,0 +1,34 @@
+.clauding-spinner {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
+    font-family: ui-monospace, "Cascadia Code", "SF Mono", Menlo, Consolas, monospace;
+    font-size: 1rem;
+    line-height: 1.2;
+    color: var(--clauding-color, #d97757);
+}
+
+.clauding-spinner__glyph {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.4em;
+    height: 1.4em;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--clauding-glyph-color, currentColor);
+    /* Render dingbat stars as monochrome text (colorable), not as emoji. */
+    font-variant-emoji: text;
+}
+
+.clauding-spinner__word {
+    font-weight: 400;
+    color: var(--clauding-word-color, currentColor);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .clauding-spinner__glyph {
+        animation: none;
+    }
+}

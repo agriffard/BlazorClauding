@@ -1,0 +1,71 @@
+@page "/samples"
+
+<PageTitle>Samples — BlazorClauding</PageTitle>
+
+<h1>Samples</h1>
+
+<div class="demo">
+    <h2>Default</h2>
+    <p>No parameters — shows the signature <code>Clauding</code> word.</p>
+    <div class="demo-stage"><ClaudingSpinner /></div>
+    <pre><code>&lt;ClaudingSpinner /&gt;</code></pre>
+</div>
+
+<div class="demo">
+    <h2>Fixed word</h2>
+    <p>Pick any word you like via <code>Word</code>.</p>
+    <div class="demo-stage">
+        <input class="form-control" style="max-width: 18rem;" @bind="customWord" @bind:event="oninput" />
+        <ClaudingSpinner Word="@customWord" />
+    </div>
+    <pre><code>&lt;ClaudingSpinner Word="@customWord" /&gt;</code></pre>
+</div>
+
+<div class="demo">
+    <h2>Random word</h2>
+    <p>Picks one random word at startup. Re-roll to pick another.</p>
+    <div class="demo-stage">
+        @if (showRandom)
+        {
+            <ClaudingSpinner Random="true" @key="randomKey" />
+        }
+        <button class="btn btn-sm btn-outline-primary" @onclick="Reroll">Re-roll</button>
+    </div>
+    <pre><code>&lt;ClaudingSpinner Random="true" /&gt;</code></pre>
+</div>
+
+<div class="demo">
+    <h2>Cycling words</h2>
+    <p>Cycles through the full list on an interval.</p>
+    <div class="demo-stage"><ClaudingSpinner Cycle="true" WordInterval="@TimeSpan.FromMilliseconds(900)" /></div>
+    <pre><code>&lt;ClaudingSpinner Cycle="true" WordInterval="@("@")(TimeSpan.FromMilliseconds(900))" /&gt;</code></pre>
+</div>
+
+<div class="demo">
+    <h2>Custom frames &amp; styling</h2>
+    <p>Swap the glyph frames and recolor via CSS variables.</p>
+    <div class="demo-stage">
+        <ClaudingSpinner Cycle="true"
+                         Frames="@dotsFrames"
+                         style="font-size: 1.5rem; --clauding-color: #6d4aff;" />
+    </div>
+    <pre><code>&lt;ClaudingSpinner Cycle="true"
+                 Frames="@("@")frames"
+                 style="--clauding-color: #6d4aff;" /&gt;</code></pre>
+</div>
+
+@code {
+    private string customWord = "Caramelizing";
+    private bool showRandom = true;
+    private int randomKey;
+
+    private static readonly string[] dotsFrames = ["⢎⡰", "⢎⡡", "⢎⡑", "⢎⠱", "⠎⡱", "⢊⡱", "⢌⡱", "⢆⡱"];
+
+    private async Task Reroll()
+    {
+        showRandom = false;
+        await Task.Yield();
+        randomKey++;
+        showRandom = true;
+    }
+}

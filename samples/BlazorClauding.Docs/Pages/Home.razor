@@ -1,0 +1,38 @@
+@page "/"
+
+<PageTitle>BlazorClauding</PageTitle>
+
+<div class="hero">
+    <ClaudingSpinner Cycle="true" style="font-size: 2rem;" />
+    <h1>BlazorClauding</h1>
+    <p class="lead">
+        A whimsical Claude-Code-style loading spinner for Blazor. Pairs an animated
+        glyph with a playful present-participle word — <code>Clauding</code>,
+        <code>Reticulating</code>, <code>Pondering</code> — fixed, random, or cycling.
+    </p>
+    <p>
+        <a class="btn btn-primary" href="samples">View samples</a>
+        <a class="btn btn-outline-secondary" href="https://github.com/agriffard/BlazorClauding" target="_blank">GitHub</a>
+    </p>
+</div>
+
+<section>
+    <h2>Install</h2>
+    <pre><code>dotnet add package BlazorClauding</code></pre>
+</section>
+
+<section>
+    <h2>Use</h2>
+    <p>Add the namespace to <code>_Imports.razor</code>:</p>
+    <pre><code>@("@using BlazorClauding")</code></pre>
+    <p>Then drop the component anywhere:</p>
+    <pre><code>&lt;ClaudingSpinner /&gt;
+&lt;ClaudingSpinner Word="Pondering" /&gt;
+&lt;ClaudingSpinner Random="true" /&gt;
+&lt;ClaudingSpinner Cycle="true" /&gt;</code></pre>
+</section>
+
+<section>
+    <h2>Word list</h2>
+    <p>@ClaudingWords.Count playful words ship in the box, from <em>Accomplishing</em> to <em>Zigzagging</em>.</p>
+</section>

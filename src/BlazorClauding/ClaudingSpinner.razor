@@ -1,0 +1,7 @@
+@namespace BlazorClauding
+@implements IDisposable
+
+<span class="clauding-spinner @CssClass" role="status" aria-live="polite" @attributes="AdditionalAttributes">
+    <span class="clauding-spinner__glyph" aria-hidden="true">@CurrentFrame</span>
+    <span class="clauding-spinner__word">@CurrentWord@Suffix</span>
+</span>
